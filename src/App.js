@@ -21,7 +21,7 @@ const navigate = useNavigate()
 
       <Routes>
         <Route path="/" element={<HomePg/>}></Route>
-        <Route path="/flashcards" element={<FlashCardsPg/>}></Route>
+        <Route path="/individual/:prodUser" element={<FlashCardsPg/>}></Route>
       </Routes>
 
       

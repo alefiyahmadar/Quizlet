@@ -26,6 +26,7 @@ export const Flashcards = [
 
 },{
     user:"Shanoy Kaul",
+    subject:"Chemistry",
                 
                 cards:[ 
                     {
