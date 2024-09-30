@@ -1,5 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import {BrowserRouter as Router} from "react-router-dom"
+import { ContextProvider } from "./contextProvider";
 
 import App from "./App";
 
@@ -8,6 +10,12 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <Router>
+      <ContextProvider>
+      <App/>
+      </ContextProvider>
+     
+    </Router>
+    
   </StrictMode>
 );
