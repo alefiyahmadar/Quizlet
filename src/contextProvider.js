@@ -10,8 +10,8 @@ const [GetCards , setCards] = useState(Flashcards)
 const [NewCard , setNewCard] = useState({
     user:"",
     subject:"",
-    cards:[{id:"0" ,quest:"" , ans:""},
-        {id:"1" , quest:"" , ans:""}]
+    cards:[{id:0 ,quest:"" , ans:""},
+        {id:1 , quest:"" , ans:""}]
 })
 
 

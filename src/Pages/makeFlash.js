@@ -1,22 +1,24 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { AppContext } from "../contextProvider"
 
 export const MakeFlashcard =()=>{
 
     const {NewCard ,setNewCard} = useContext(AppContext)
+    const [ Term ,setTerm] = useState("")
+    const [Def , setDef] = useState("")
+const GetTerm =(term ,id )=>{
 
-const GetTerm =(term ,_id )=>{
-
-    console.log(term , _id)
-    
-    console.log(NewCard)
-
+    console.log(term , id)
+    setTerm(term)
+    const addTerm = NewCard.cards.map((e)=>e.id === id ? {...e , quest:Term}:e)
+    console.log(addTerm)
     
 }
 const GetDef =(def)=>{
 
     console.log(def)
 }
+
 
 
 
@@ -27,11 +29,11 @@ const GetDef =(def)=>{
       <input className="desc" placeholder="Add a description"/>
 
       {
-        NewCard.cards.map((item)=>{
-            return(<div key={item.id} className="addDiv">
+        NewCard.cards.map((item , index)=>{
+            return(<div key={index} className="addDiv">
                 <div>
                     <input onChange={(e)=>GetTerm(e.target.value , item.id)} placeholder="Enter term"/>
-                    <input onChange={(e)=>GetDef(e.target.value)} placeholder="Enter defination"/>
+                    <input placeholder="Enter defination"/>
                 </div>
             </div>)
         })
