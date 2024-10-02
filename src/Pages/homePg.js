@@ -9,7 +9,9 @@ const {GetCards , setCards} = useContext(AppContext)
     
 
     return(<div>
-        <p>home</p>
+        
+        <div className="cardContainer" >
+            <p>Famous Flashcards</p>
         <div className="CardCnt">
         {
             GetCards.map((item)=><div  onClick={() => navigate(`/individual/${item.user}`)} className="ParentCard" id={item.user}>
@@ -17,6 +19,7 @@ const {GetCards , setCards} = useContext(AppContext)
                 <p>{item.user}</p>
             </div>)
         }
+        </div>
         </div>
         
     </div>)

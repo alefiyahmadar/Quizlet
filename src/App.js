@@ -1,8 +1,9 @@
 import "./styles.css";
 import { Route , Routes, useNavigate } from "react-router";
 import { HomePg } from "./Pages/homePg";
-import { FlashCardsPg } from "./Pages/flashCardPg";
+import { FlashCardsPg } from "./Pages/singleflashCardPg";
 import { NavLink } from "react-router-dom";
+import { MakeFlashcard } from "./Pages/makeFlash";
 
 
 
@@ -21,6 +22,7 @@ const navigate = useNavigate()
 
       <Routes>
         <Route path="/" element={<HomePg/>}></Route>
+        <Route path="/flashcards" element={<MakeFlashcard/>}></Route>
         <Route path="/individual/:prodUser" element={<FlashCardsPg/>}></Route>
       </Routes>
 

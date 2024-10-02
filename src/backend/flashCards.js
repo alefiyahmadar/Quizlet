@@ -43,5 +43,27 @@ export const Flashcards = [
                 quest:"center, or core, of an atom (where the protons and neutrons are located)",
                 ans:"nucleus"
             }]
+} ,{
+    user:"Het Groover",
+    subject:"Social Science",
+    
+    cards:[ 
+        {
+        id:uuid(),
+        quest:"Who is the father of sociology?",
+        ans:"Auguste Comte"
+    },
+{
+    id:uuid(),
+    quest:"What is the political ideology that advocates for common ownership of production?",
+    ans:"Communism"
+},{
+    id:uuid(),
+    quest:"Who proposed the theory of the division of labor?",
+    ans:"Émile Durkheim"
+}]
+   
+
+
 }
 ]
