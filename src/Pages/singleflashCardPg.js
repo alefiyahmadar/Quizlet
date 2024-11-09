@@ -4,17 +4,29 @@ import { useParams } from "react-router-dom"
 
 
 
+
 export const FlashCardsPg = ()=>{
-const {prodUser} = useParams()
+const {prodUser , prodSubject} = useParams()
 
 
-const {GetCards , setCards} = useContext(AppContext)
+
+const {GetUsers , setUsers} = useContext(AppContext)
 
 const [currentIndex, setCurrentIndex] = useState(0);
 const [isFlipped, setIsFlipped] = useState(false);
 
-console.log(GetCards , prodUser)
-const GetSingleCard = GetCards.find((e)=>e.user === prodUser)
+console.log( prodUser , GetUsers , prodSubject)
+const GetSingleCard = GetUsers.find((item)=>{
+if(item.user === prodUser){
+
+  return item.cards
+}
+
+})
+
+
+
+
 console.log(GetSingleCard)
 
 const handleFlip = () => {

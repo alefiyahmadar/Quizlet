@@ -4,19 +4,17 @@ import { AppContext } from "../contextProvider"
 export const MakeFlashcard =()=>{
 
     const {NewCard ,setNewCard} = useContext(AppContext)
-    const [ Term ,setTerm] = useState("")
-    const [Def , setDef] = useState("")
-const GetTerm =(term ,id )=>{
-
-    console.log(term , id)
-    setTerm(term)
-    const addTerm = NewCard.cards.map((e)=>e.id === id ? {...e , quest:Term}:e)
-    console.log(addTerm)
+    const [getSubject , setSubject] = useState("")
     
-}
-const GetDef =(def)=>{
+    const HandleInput =(value ,field , id )=>{
 
-    console.log(def)
+console.log(value , field ,id)
+    }
+
+const AddCards = ()=>{
+
+
+
 }
 
 
@@ -25,19 +23,20 @@ const GetDef =(def)=>{
     return(<div className="creatCont">
         
         <p>Create a new flashcard set</p>
-      <input className="title" placeholder="Enter a title "/>
-      <input className="desc" placeholder="Add a description"/>
+      <input className="subject" onChange={()=>setSubject(e.target.value)} placeholder="Enter a subject "/>
+      
 
       {
-        NewCard.cards.map((item , index)=>{
-            return(<div key={index} className="addDiv">
-                <div>
-                    <input onChange={(e)=>GetTerm(e.target.value , item.id)} placeholder="Enter term"/>
-                    <input placeholder="Enter defination"/>
+        NewCard.map((item )=>{
+            return(<div key={item.id} className="addDiv">
+                <div >
+                    <input onChange={(e)=>HandleInput(e.target.value , "quest" , item.id)} placeholder="Enter term"/>
+                    <input onChange={(e)=>HandleInput(e.target.value , "ans" , item.id)} placeholder="Enter defination"/>
                 </div>
             </div>)
         })
       }
+      <button onClick={AddCards}>Create</button>
     
        
     </div>)

@@ -1,24 +1,25 @@
 import { createContext, useContext, useState } from "react";
-import {Flashcards} from "./backend/flashCards"
+import {UserArr} from "./backend/flashCards"
 
 
 export const AppContext = createContext()
 
 export const ContextProvider = ({children})=>{
 
-const [GetCards , setCards] = useState(Flashcards)
-const [NewCard , setNewCard] = useState({
-    user:"",
-    subject:"",
-    cards:[{id:0 ,quest:"" , ans:""},
-        {id:1 , quest:"" , ans:""}]
-})
+const [GetUsers , setUsers] = useState(UserArr)
+const [NewCard , setNewCard] = useState([{
+        id:1,subject:"" , quest:"" ,ans:""
+    },{
+        id:2,subject:"" , quest:"" ,ans:""
+    }]
+)
+
 
 
     
 
     return(
-        <AppContext.Provider value={{GetCards , setCards , NewCard ,setNewCard}}>
+        <AppContext.Provider value={{GetUsers , setUsers , NewCard ,setNewCard}}>
             {children}
         </AppContext.Provider>  
     )

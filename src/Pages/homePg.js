@@ -4,18 +4,19 @@ import { useNavigate } from "react-router"
 
 export const HomePg =()=>{
 const navigate = useNavigate()
-const {GetCards , setCards} = useContext(AppContext)
+const {GetUsers , setUsers} = useContext(AppContext)
     
     
 
     return(<div>
+
         
         <div className="cardContainer" >
             <p>Famous Flashcards</p>
         <div className="CardCnt">
         {
-            GetCards.map((item)=><div  onClick={() => navigate(`/individual/${item.user}`)} className="ParentCard" id={item.user}>
-                <p>{item.subject}</p>
+            GetUsers.map((item)=><div  onClick={() => navigate(`/individual/${item.cards[0].subject}/${item.user}`)} className="ParentCard" id={item.user}>
+                <p>{item.cards[0].subject}</p>
                 <p>{item.user}</p>
             </div>)
         }
